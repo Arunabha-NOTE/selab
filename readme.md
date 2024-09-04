@@ -1,285 +1,200 @@
-# Software Requirements Specification (SRS)
-**Project:** Social Networking Site  
-**Date:** 04/09/2024 
-**Version:** 1.0  
-**Author:** Arunabha Mukhopadhyay
+# Software Requirements Specification for Social Networking Site
 
----
+Version 1.0 approved  
+Prepared by Arunabha Mukhopadhyay
+[Organization]  
+04/09/2024  
+Copyright © 1999 by Karl E. Wiegers. Permission is granted to use, modify, and distribute this document.
 
 ## Table of Contents
 
-1. [Introduction](#introduction)
-   - [1.1 Purpose](#11-purpose)
-   - [1.2 Scope](#12-scope)
-   - [1.3 Definitions, Acronyms, and Abbreviations](#13-definitions-acronyms-and-abbreviations)
-   - [1.4 References](#14-references)
-   - [1.5 Overview](#15-overview)
-2. [Overall Description](#overall-description)
-   - [2.1 Product Perspective](#21-product-perspective)
-   - [2.2 Product Functions](#22-product-functions)
-   - [2.3 User Classes and Characteristics](#23-user-classes-and-characteristics)
-   - [2.4 Operating Environment](#24-operating-environment)
-   - [2.5 Design and Implementation Constraints](#25-design-and-implementation-constraints)
-   - [2.6 Assumptions and Dependencies](#26-assumptions-and-dependencies)
-3. [Specific Requirements](#specific-requirements)
-   - [3.1 External Interface Requirements](#31-external-interface-requirements)
-   - [3.2 Functional Requirements](#32-functional-requirements)
-   - [3.3 Performance Requirements](#33-performance-requirements)
-   - [3.4 Logical Database Requirements](#34-logical-database-requirements)
-   - [3.5 Design Constraints](#35-design-constraints)
-   - [3.6 Software System Attributes](#36-software-system-attributes)
-   - [3.7 Security Requirements](#37-security-requirements)
-4. [Appendices](#appendices)
-   - [4.1 Glossary](#41-glossary)
-   - [4.2 Use Cases](#42-use-cases)
-5. [Other Nonfunctional Requirements](#other-nonfunctional-requirements)
-   - [5.1 Performance Requirements](#51-performance-requirements)
-   - [5.2 Safety Requirements](#52-safety-requirements)
-   - [5.3 Security Requirements](#53-security-requirements)
-   - [5.4 Software Quality Attributes](#54-software-quality-attributes)
-   - [5.5 Business Rules](#55-business-rules)
-6. [Other Requirements](#other-requirements)
+- [Revision History](#revision-history)
+- [1. Introduction](#1-introduction)
+  - [1.1 Purpose](#11-purpose)
+  - [1.2 Document Conventions](#12-document-conventions)
+  - [1.3 Intended Audience and Reading Suggestions](#13-intended-audience-and-reading-suggestions)
+  - [1.4 Product Scope](#14-product-scope)
+  - [1.5 References](#15-references)
+- [2. Overall Description](#2-overall-description)
+  - [2.1 Product Perspective](#21-product-perspective)
+  - [2.2 Product Functions](#22-product-functions)
+  - [2.3 User Classes and Characteristics](#23-user-classes-and-characteristics)
+  - [2.4 Operating Environment](#24-operating-environment)
+  - [2.5 Design and Implementation Constraints](#25-design-and-implementation-constraints)
+  - [2.6 User Documentation](#26-user-documentation)
+  - [2.7 Assumptions and Dependencies](#27-assumptions-and-dependencies)
+- [3. External Interface Requirements](#3-external-interface-requirements)
+  - [3.1 User Interfaces](#31-user-interfaces)
+  - [3.2 Hardware Interfaces](#32-hardware-interfaces)
+  - [3.3 Software Interfaces](#33-software-interfaces)
+  - [3.4 Communications Interfaces](#34-communications-interfaces)
+- [5. Other Nonfunctional Requirements](#5-other-nonfunctional-requirements)
+  - [5.1 Performance Requirements](#51-performance-requirements)
+  - [5.2 Safety Requirements](#52-safety-requirements)
+  - [5.3 Security Requirements](#53-security-requirements)
+  - [5.4 Software Quality Attributes](#54-software-quality-attributes)
+  - [5.5 Business Rules](#55-business-rules)
+- [6. Other Requirements](#6-other-requirements)
+- [Appendix A: Glossary](#appendix-a-glossary)
+- [Appendix B: Analysis Models](#appendix-b-analysis-models)
+- [Appendix C: To Be Determined List](#appendix-c-to-be-determined-list)
 
----
+## Revision History
 
-## 1. Introduction <a name="introduction"></a>
+| Name         | Date       | Reason For Changes | Version |
+|--------------|------------|---------------------|---------|
+| Arunabha Mukhopadhyay | 04/09/2024   | Initial Creation    | 1.0     |
 
-### 1.1 Purpose <a name="11-purpose"></a>
+## 1. Introduction
 
-This SRS document outlines the functional and non-functional requirements for developing a Social Networking Site. The document serves as a guide for the development team, project managers, stakeholders, and clients to ensure all requirements are captured and understood. It will facilitate the design, implementation, and validation phases of the project.
+### 1.1 Purpose
 
-### 1.2 Scope <a name="12-scope"></a>
+This document specifies the software requirements for the Social Networking Site. It details the scope, functionality, and constraints of the product to ensure clarity and agreement between stakeholders and developers.
 
-The Social Networking Site will allow users to create profiles, post updates, send friend requests, and communicate through messaging. The system will include features for user authentication, profile management, and privacy settings. The project aims to deliver a secure and user-friendly platform for social interaction.
+### 1.2 Document Conventions
 
-### 1.3 Definitions, Acronyms, and Abbreviations <a name="13-definitions-acronyms-and-abbreviations"></a>
+- **Priority Levels**: High, Medium, Low
+- **Requirement Identification**: Each requirement will be uniquely identified by a sequence number or meaningful tag.
+- **Terminology**: Standard terminology and definitions are used to avoid ambiguity.
 
-- **SRS**: Software Requirements Specification
-- **SNS**: Social Networking Site
-- **UI**: User Interface
-- **API**: Application Programming Interface
-- **IaC**: Infrastructure as Code
-- **CI/CD**: Continuous Integration/Continuous Deployment
-- **OAuth**: Open Authorization, a protocol for token-based authentication
-- **CRUD**: Create, Read, Update, Delete
+### 1.3 Intended Audience and Reading Suggestions
 
-### 1.4 References <a name="14-references"></a>
+- **Developers**: To understand detailed functional and non-functional requirements.
+- **Project Managers**: For planning and tracking project progress.
+- **Testers**: To prepare for test case creation.
+- **Users**: To understand the functionalities and limitations of the system.
 
-- IEEE 830-1998 Standard for Software Requirements Specifications
-- [Reference 2: Add any additional references here]
+Start with the overview sections to gain an understanding of the overall product and its scope. Proceed to detailed requirements for specific functionalities.
 
-### 1.5 Overview <a name="15-overview"></a>
+### 1.4 Product Scope
 
-This document provides a detailed overview of the system requirements, including functional and non-functional requirements. Section 2 describes the overall system, including its perspective, functions, and constraints. Section 3 details the specific requirements, including external interfaces, performance, and security. The appendices provide additional context, including use cases and a glossary.
+The Social Networking Site will allow users to create profiles, post updates, send friend requests, and message each other. The platform will support user authentication, profile management, and privacy settings. The primary goal is to provide a secure and user-friendly social networking experience.
 
----
+### 1.5 References
 
-## 2. Overall Description <a name="overall-description"></a>
+- [Document Title], [Author], [Version], [Date], [Source/Location]
+- [Document Title], [Author], [Version], [Date], [Source/Location]
 
-### 2.1 Product Perspective <a name="21-product-perspective"></a>
+## 2. Overall Description
 
-The Social Networking Site is a web-based application designed to facilitate social interactions between users. It will integrate with external authentication services such as OAuth for secure user login. The system will be built on a microservices architecture, allowing for scalable and modular development. The site will be accessible via any modern web browser and optimized for performance and usability.
+### 2.1 Product Perspective
 
-### 2.2 Product Functions <a name="22-product-functions"></a>
+The Social Networking Site is a new product designed to enhance online social interactions. It is not a replacement but rather a new addition to the market, offering advanced features for user engagement.
 
-The major functions of the Social Networking Site include:
+### 2.2 Product Functions
 
-- **User Registration and Authentication**: Users can register, log in, and recover passwords.
-- **Profile Management**: Users can create, update, and manage their profiles, including privacy settings.
-- **Social Interactions**: Users can post updates, send friend requests, and message each other.
-- **Search Functionality**: Users can search for other users and content.
-- **Content Moderation**: Administrators can monitor and manage user-generated content.
+- User profile creation and management
+- Posting updates and media
+- Sending and receiving friend requests
+- Messaging between users
+- Managing privacy settings
 
-### 2.3 User Classes and Characteristics <a name="23-user-classes-and-characteristics"></a>
+### 2.3 User Classes and Characteristics
 
-- **General Users**: Individuals who use the platform for social networking. They require an intuitive interface and responsive performance.
-- **Administrators**: Users with elevated privileges responsible for managing the platform, moderating content, and handling user issues.
+- **Regular Users**: Individuals who use the site for personal social interactions.
+- **Administrators**: Users with privileges to manage and moderate the site.
+- **Developers**: Individuals responsible for maintaining and updating the system.
 
-### 2.4 Operating Environment <a name="24-operating-environment"></a>
+### 2.4 Operating Environment
 
-The Social Networking Site will operate in a web environment, accessible via major web browsers (e.g., Chrome, Firefox, Safari). The backend will be deployed on cloud infrastructure (GCP, Azure, or AWS), ensuring scalability and high availability.
+- **Frontend**: HTML, Tailwind CSS, Angular, NgRx
+- **Backend**: Java, Lombok, Spring, Spring Boot, Spring Microservices
+- **Database**: PostgreSQL
+- **Deployment**: GCP/Azure/AWS with Ansible or Terraform
+- **CI/CD**: GitLab Pipelines, CircleCI
 
-### 2.5 Design and Implementation Constraints <a name="25-design-and-implementation-constraints"></a>
+### 2.5 Design and Implementation Constraints
 
-- **Frontend**:
-  - Developed using **HTML**, **Tailwind CSS**, **Angular**, and **NgRx** for state management.
-  - **bcrypt** will be utilized for secure password hashing and authentication.
+- Use of specified technologies and frameworks
+- Adherence to security and privacy standards
+- Compliance with GDPR and other legal requirements
 
-- **Backend**:
-  - Developed using **Java** with **Lombok** for streamlined code management.
-  - **Spring Boot** for rapid development and deployment, with **Spring Microservices** for a modular and scalable architecture.
-  - **Spring Web** will handle microservices deployment.
+### 2.6 User Documentation
 
-- **Cloud Native Deployment**:
-  - **GCP**, **Azure**, or **AWS** will be used for cloud deployment.
-  - **Ansible** or **Terraform** will manage infrastructure as code.
+- User manuals
+- Online help
+- Tutorials
 
-- **CI/CD**:
-  - **GitLab Pipelines** and **CircleCI** will manage continuous integration and deployment workflows.
+### 2.7 Assumptions and Dependencies
 
-- **Database**:
-  - **PostgreSQL** will serve as the primary relational database management system.
+- Availability of third-party services for authentication and hosting
+- Compliance with regulatory requirements
 
-- **Testing Framework**:
-  - **JUnit** will be the primary testing framework for backend validation.
+## 3. External Interface Requirements
 
-### 2.6 Assumptions and Dependencies <a name="26-assumptions-and-dependencies"></a>
+### 3.1 User Interfaces
 
-- Users have access to stable internet and modern web browsers.
-- The system will integrate with third-party authentication providers.
-- Cloud infrastructure and CI/CD tools will be available for deployment and development processes.
+- Web interface with responsive design
+- Consistent UI elements based on Angular guidelines
+- Accessibility features for diverse user needs
 
----
+### 3.2 Hardware Interfaces
 
-## 3. Specific Requirements <a name="specific-requirements"></a>
+- Supports standard web browsers and devices
+- No specific hardware requirements
 
-### 3.1 External Interface Requirements <a name="31-external-interface-requirements"></a>
+### 3.3 Software Interfaces
 
-- **User Interfaces**: 
-  - The UI must be responsive and intuitive, supporting various screen sizes (desktop, tablet, mobile).
-  - The design will follow accessibility standards (e.g., WCAG).
+- Integration with OAuth 2.0 for authentication
+- Interaction with PostgreSQL for data storage
+- API endpoints for third-party integration
 
-- **API Interfaces**: 
-  - The system will provide RESTful APIs for integration with mobile apps and external services.
-  - API endpoints will be secured using OAuth tokens.
+### 3.4 Communications Interfaces
 
-### 3.2 Functional Requirements <a name="32-functional-requirements"></a>
+- HTTPS for secure data transmission
+- RESTful APIs for client-server communication
 
-#### 3.2.1 User Registration and Authentication
-- The system shall allow users to register with an email address and password.
-- The system shall allow users to log in using their credentials.
-- The system shall support password recovery using email verification.
+## 5. Other Nonfunctional Requirements
 
-#### 3.2.2 Profile Management
-- The system shall allow users to create and update their profiles.
-- The system shall allow users to upload and change profile pictures.
-- The system shall allow users to configure privacy settings for their profiles, controlling who can view their information.
+### 5.1 Performance Requirements
 
-#### 3.2.3 Social Interactions
-- The system shall allow users to post updates, including text and media.
-- The system shall allow users to send, accept, and reject friend requests.
-- The system shall allow users to send private messages to other users.
+- Support for at least 10,000 concurrent users
+- Page load times within 3 seconds for 95% of interactions
+- Handle 100 requests per second with <200 ms response time
 
-#### 3.2.4 Privacy Settings
-- The system shall allow users to control who can view their profile information.
-- The system shall allow users to control who can view their posts and updates.
+### 5.2 Safety Requirements
 
-#### 3.2.5 Search Functionality
-- The system shall allow users to search for other users by name or email.
-- The system shall allow users to search for posts by keywords.
+- Prevent unauthorized access
+- Daily data backups retained for 30 days
+- Mechanism for data breach notifications within 24 hours
 
-#### 3.2.6 Content Moderation (for Administrators)
-- The system shall allow administrators to view, edit, and delete user-generated content.
-- The system shall allow administrators to suspend or ban user accounts violating platform policies.
+### 5.3 Security Requirements
 
-### 3.3 Performance Requirements <a name="33-performance-requirements"></a>
+- Password hashing with bcrypt (minimum 12 salt rounds)
+- OAuth 2.0 for third-party authentication
+- Enforce HTTPS for all communications
+- Role-based access control
 
-- The system shall support at least 10,000 concurrent users without significant performance degradation.
-- The system shall load the main user interface within 3 seconds under normal conditions.
-- The API shall respond to requests within 200ms on average.
+### 5.4 Software Quality Attributes
 
-### 3.4 Logical Database Requirements <a name="34-logical-database-requirements"></a>
+- **Reliability**: 99.9% uptime
+- **Scalability**: Horizontal scaling capability
+- **Maintainability**: Modular codebase
+- **Usability**: Intuitive user interface
 
-- The system shall store user profiles, posts, friend connections, and messages in a relational database.
-- The system shall maintain audit logs of all user activities for a minimum of 1 year.
+### 5.5 Business Rules
 
-### 3.5 Design Constraints <a name="35-design-constraints"></a>
+- Users must be 13 years or older
+- Acceptance of terms of service and privacy policy required
+- Administrators can suspend or ban accounts violating guidelines
 
-- The frontend will use **Angular** for the application framework and **NgRx** for state management.
-- The backend will use **Java** with **Spring Boot** for RESTful service development.
-- Cloud deployment will utilize **GCP**, **Azure**, or **AWS** with **Ansible** or **Terraform** for infrastructure as code.
-- CI/CD processes will be managed using **GitLab Pipelines** and **CircleCI**.
+## 6. Other Requirements
 
-### 3.6 Software System Attributes <a name="36-software-system-attributes"></a>
+- Support for multiple languages (English, Spanish, French)
+- GDPR compliance for data deletion requests
+- Reuse of components in future projects
 
-- **Security**: 
-  - The system shall use **bcrypt** for password hashing.
-  - OAuth will be implemented for secure third-party authentication.
-  
-- **Reliability**: 
-  - The system shall have 99.9% uptime, supported by cloud-based infrastructure.
-  
-- **Maintainability**: 
-  - The system codebase will be modular, leveraging microservices for easier updates and maintenance.
-  
-- **Scalability**: 
-  - The system architecture will support horizontal scaling to handle growing user loads.
+## Appendix A: Glossary
 
-### 3.7 Security Requirements <a name="37-security-requirements"></a>
+- **OAuth 2.0**: An authorization framework that allows applications to obtain limited access to user accounts.
+- **GDPR**: General Data Protection Regulation, a regulation in EU law on data protection and privacy.
 
-- The system shall implement role-based access control (RBAC) to restrict access based on user roles.
+## Appendix B: Analysis Models
 
----
+- **Data Flow Diagrams**: To be provided separately.
+- **Class Diagrams**: To be provided separately.
 
-## 4. Appendices <a name="appendices"></a>
+## Appendix C: To Be Determined List
 
-### 4.1 Glossary <a name="41-glossary"></a>
-
-- **Friend Request**: A request sent by one user to another to become friends on the platform.
-- **OAuth**: An open-standard authorization protocol that allows secure access to user data without exposing user credentials.
-- **Microservices**: A software architecture style that structures an application as a collection of loosely coupled services.
-
-### 4.2 Use Cases <a name="42-use-cases"></a>
-
-**Use Case 1: User Registration**  
-- **Actors**: New User  
-- **Description**: A new user registers on the platform by providing an email address, creating a password, and verifying their email.  
-- **Preconditions**: The user must have a valid email address.  
-- **Postconditions**: The user account is created, and the user can log in.
-
-**Use Case 2: Posting an Update**  
-- **Actors**: Registered User  
-- **Description**: A registered user posts an update that appears on their profile and the feed of their friends.  
-- **Preconditions**: The user must be logged in.  
-- **Postconditions**: The post is visible to the user’s friends, depending on privacy settings.
-
-**Use Case 3: Sending a Friend Request**  
-- **Actors**: Registered User  
-- **Description**: A registered user sends a friend request to another user.  
-- **Preconditions**: The user must be logged in and not already friends with the recipient.  
-- **Postconditions**: The friend request is sent and is pending until accepted or declined.
-
----
-
-- ## 5. Other Nonfunctional Requirements <a name="other-nonfunctional-requirements"></a>
-
-### 5.1 Performance Requirements <a name="51-performance-requirements"></a>
-
-- The system shall support at least 10,000 concurrent users with no noticeable performance degradation.
-- Page load times shall not exceed 3 seconds for 95% of all user interactions.
-- The system shall handle 100 requests per second with an average response time of less than 200 milliseconds.
-
-### 5.2 Safety Requirements <a name="52-safety-requirements"></a>
-
-- The system shall prevent unauthorized access to user data by implementing strict access controls.
-- User data shall be backed up daily, with backups retained for 30 days.
-- In case of a data breach, the system shall have a mechanism to notify affected users within 24 hours.
-
-### 5.3 Security Requirements <a name="53-security-requirements"></a>
-
-- All user passwords shall be hashed using **bcrypt** with a minimum of 12 salt rounds.
-- The system shall implement **OAuth 2.0** for secure third-party authentication.
-- The system shall enforce HTTPS for all communications to protect data in transit.
-- Role-based access control (RBAC) shall be implemented to restrict access based on user roles.
-
-### 5.4 Software Quality Attributes <a name="54-software-quality-attributes"></a>
-
-- **Reliability**: The system shall maintain 99.9% uptime, supported by redundant cloud infrastructure.
-- **Scalability**: The system shall be capable of horizontal scaling to accommodate increased user loads.
-- **Maintainability**: The codebase shall be modular and adhere to clean code principles, making it easy to update and maintain.
-- **Usability**: The user interface shall be intuitive and follow established usability standards.
-
-### 5.5 Business Rules <a name="55-business-rules"></a>
-
-- Only users aged 13 and above can register on the platform.
-- Users must accept the terms of service and privacy policy before account creation.
-- Administrators shall have the authority to suspend or ban accounts that violate the platform’s community guidelines.
-
----
-
-## 6. Other Requirements <a name="other-requirements"></a>
-
-- The system shall support multiple languages, with localization for at least English, Spanish, and French.
-- The database schema shall be designed to comply with GDPR requirements, allowing users to request data deletion.
-- The system shall be designed with reuse in mind, enabling components to be reused in future projects.
-
+- Specific third-party services for integration
+- Detailed backup and recovery procedures
