@@ -32,6 +32,13 @@
 4. [Appendices](#appendices)
    - [4.1 Glossary](#41-glossary)
    - [4.2 Use Cases](#42-use-cases)
+5. [Other Nonfunctional Requirements](#other-nonfunctional-requirements)
+   - [5.1 Performance Requirements](#51-performance-requirements)
+   - [5.2 Safety Requirements](#52-safety-requirements)
+   - [5.3 Security Requirements](#53-security-requirements)
+   - [5.4 Software Quality Attributes](#54-software-quality-attributes)
+   - [5.5 Business Rules](#55-business-rules)
+6. [Other Requirements](#other-requirements)
 
 ---
 
@@ -231,3 +238,48 @@ The Social Networking Site will operate in a web environment, accessible via maj
 - **Description**: A registered user sends a friend request to another user.  
 - **Preconditions**: The user must be logged in and not already friends with the recipient.  
 - **Postconditions**: The friend request is sent and is pending until accepted or declined.
+
+---
+
+- ## 5. Other Nonfunctional Requirements <a name="other-nonfunctional-requirements"></a>
+
+### 5.1 Performance Requirements <a name="51-performance-requirements"></a>
+
+- The system shall support at least 10,000 concurrent users with no noticeable performance degradation.
+- Page load times shall not exceed 3 seconds for 95% of all user interactions.
+- The system shall handle 100 requests per second with an average response time of less than 200 milliseconds.
+
+### 5.2 Safety Requirements <a name="52-safety-requirements"></a>
+
+- The system shall prevent unauthorized access to user data by implementing strict access controls.
+- User data shall be backed up daily, with backups retained for 30 days.
+- In case of a data breach, the system shall have a mechanism to notify affected users within 24 hours.
+
+### 5.3 Security Requirements <a name="53-security-requirements"></a>
+
+- All user passwords shall be hashed using **bcrypt** with a minimum of 12 salt rounds.
+- The system shall implement **OAuth 2.0** for secure third-party authentication.
+- The system shall enforce HTTPS for all communications to protect data in transit.
+- Role-based access control (RBAC) shall be implemented to restrict access based on user roles.
+
+### 5.4 Software Quality Attributes <a name="54-software-quality-attributes"></a>
+
+- **Reliability**: The system shall maintain 99.9% uptime, supported by redundant cloud infrastructure.
+- **Scalability**: The system shall be capable of horizontal scaling to accommodate increased user loads.
+- **Maintainability**: The codebase shall be modular and adhere to clean code principles, making it easy to update and maintain.
+- **Usability**: The user interface shall be intuitive and follow established usability standards.
+
+### 5.5 Business Rules <a name="55-business-rules"></a>
+
+- Only users aged 13 and above can register on the platform.
+- Users must accept the terms of service and privacy policy before account creation.
+- Administrators shall have the authority to suspend or ban accounts that violate the platform’s community guidelines.
+
+---
+
+## 6. Other Requirements <a name="other-requirements"></a>
+
+- The system shall support multiple languages, with localization for at least English, Spanish, and French.
+- The database schema shall be designed to comply with GDPR requirements, allowing users to request data deletion.
+- The system shall be designed with reuse in mind, enabling components to be reused in future projects.
+
