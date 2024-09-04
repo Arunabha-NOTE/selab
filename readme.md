@@ -3,8 +3,7 @@
 Version 1.0 approved  
 Prepared by Arunabha Mukhopadhyay
 [Organization]  
-04/09/2024  
-Copyright © 1999 by Karl E. Wiegers. Permission is granted to use, modify, and distribute this document.
+04/09/2024 
 
 ## Table of Contents
 
@@ -14,7 +13,6 @@ Copyright © 1999 by Karl E. Wiegers. Permission is granted to use, modify, and 
   - [1.2 Document Conventions](#12-document-conventions)
   - [1.3 Intended Audience and Reading Suggestions](#13-intended-audience-and-reading-suggestions)
   - [1.4 Product Scope](#14-product-scope)
-  - [1.5 References](#15-references)
 - [2. Overall Description](#2-overall-description)
   - [2.1 Product Perspective](#21-product-perspective)
   - [2.2 Product Functions](#22-product-functions)
@@ -70,10 +68,7 @@ Start with the overview sections to gain an understanding of the overall product
 
 The Social Networking Site will allow users to create profiles, post updates, send friend requests, and message each other. The platform will support user authentication, profile management, and privacy settings. The primary goal is to provide a secure and user-friendly social networking experience.
 
-### 1.5 References
-
-- [Document Title], [Author], [Version], [Date], [Source/Location]
-- [Document Title], [Author], [Version], [Date], [Source/Location]
+---
 
 ## 2. Overall Description
 
