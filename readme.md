@@ -1,6 +1,6 @@
 # Software Requirements Specification (SRS)  
 **Project:** Social Networking Site  
-**Date:** [Insert Date]  
+**Date:** 04/09/2024  
 **Version:** 1.0  
 **Author:** Arunabha Mukhopadhyay
 
