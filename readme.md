@@ -1,6 +1,6 @@
-# Software Requirements Specification (SRS)  
+# Software Requirements Specification (SRS)
 **Project:** Social Networking Site  
-**Date:** 04/09/2024  
+**Date:** 04/09/2024 
 **Version:** 1.0  
 **Author:** Arunabha Mukhopadhyay
 
@@ -8,44 +8,44 @@
 
 ## Table of Contents
 
-1. **Introduction**
-   - 1.1 Purpose
-   - 1.2 Scope
-   - 1.3 Definitions, Acronyms, and Abbreviations
-   - 1.4 References
-   - 1.5 Overview
-2. **Overall Description**
-   - 2.1 Product Perspective
-   - 2.2 Product Functions
-   - 2.3 User Classes and Characteristics
-   - 2.4 Operating Environment
-   - 2.5 Design and Implementation Constraints
-   - 2.6 Assumptions and Dependencies
-3. **Specific Requirements**
-   - 3.1 External Interface Requirements
-   - 3.2 Functional Requirements
-   - 3.3 Performance Requirements
-   - 3.4 Logical Database Requirements
-   - 3.5 Design Constraints
-   - 3.6 Software System Attributes
-   - 3.7 Security Requirements
-4. **Appendices**
-   - 4.1 Glossary
-   - 4.2 Use Cases
+1. [Introduction](#introduction)
+   - [1.1 Purpose](#11-purpose)
+   - [1.2 Scope](#12-scope)
+   - [1.3 Definitions, Acronyms, and Abbreviations](#13-definitions-acronyms-and-abbreviations)
+   - [1.4 References](#14-references)
+   - [1.5 Overview](#15-overview)
+2. [Overall Description](#overall-description)
+   - [2.1 Product Perspective](#21-product-perspective)
+   - [2.2 Product Functions](#22-product-functions)
+   - [2.3 User Classes and Characteristics](#23-user-classes-and-characteristics)
+   - [2.4 Operating Environment](#24-operating-environment)
+   - [2.5 Design and Implementation Constraints](#25-design-and-implementation-constraints)
+   - [2.6 Assumptions and Dependencies](#26-assumptions-and-dependencies)
+3. [Specific Requirements](#specific-requirements)
+   - [3.1 External Interface Requirements](#31-external-interface-requirements)
+   - [3.2 Functional Requirements](#32-functional-requirements)
+   - [3.3 Performance Requirements](#33-performance-requirements)
+   - [3.4 Logical Database Requirements](#34-logical-database-requirements)
+   - [3.5 Design Constraints](#35-design-constraints)
+   - [3.6 Software System Attributes](#36-software-system-attributes)
+   - [3.7 Security Requirements](#37-security-requirements)
+4. [Appendices](#appendices)
+   - [4.1 Glossary](#41-glossary)
+   - [4.2 Use Cases](#42-use-cases)
 
 ---
 
-## 1. Introduction
+## 1. Introduction <a name="introduction"></a>
 
-### 1.1 Purpose
+### 1.1 Purpose <a name="11-purpose"></a>
 
 This SRS document outlines the functional and non-functional requirements for developing a Social Networking Site. The document serves as a guide for the development team, project managers, stakeholders, and clients to ensure all requirements are captured and understood. It will facilitate the design, implementation, and validation phases of the project.
 
-### 1.2 Scope
+### 1.2 Scope <a name="12-scope"></a>
 
 The Social Networking Site will allow users to create profiles, post updates, send friend requests, and communicate through messaging. The system will include features for user authentication, profile management, and privacy settings. The project aims to deliver a secure and user-friendly platform for social interaction.
 
-### 1.3 Definitions, Acronyms, and Abbreviations
+### 1.3 Definitions, Acronyms, and Abbreviations <a name="13-definitions-acronyms-and-abbreviations"></a>
 
 - **SRS**: Software Requirements Specification
 - **SNS**: Social Networking Site
@@ -56,24 +56,24 @@ The Social Networking Site will allow users to create profiles, post updates, se
 - **OAuth**: Open Authorization, a protocol for token-based authentication
 - **CRUD**: Create, Read, Update, Delete
 
-### 1.4 References
+### 1.4 References <a name="14-references"></a>
 
 - IEEE 830-1998 Standard for Software Requirements Specifications
 - [Reference 2: Add any additional references here]
 
-### 1.5 Overview
+### 1.5 Overview <a name="15-overview"></a>
 
 This document provides a detailed overview of the system requirements, including functional and non-functional requirements. Section 2 describes the overall system, including its perspective, functions, and constraints. Section 3 details the specific requirements, including external interfaces, performance, and security. The appendices provide additional context, including use cases and a glossary.
 
 ---
 
-## 2. Overall Description
+## 2. Overall Description <a name="overall-description"></a>
 
-### 2.1 Product Perspective
+### 2.1 Product Perspective <a name="21-product-perspective"></a>
 
 The Social Networking Site is a web-based application designed to facilitate social interactions between users. It will integrate with external authentication services such as OAuth for secure user login. The system will be built on a microservices architecture, allowing for scalable and modular development. The site will be accessible via any modern web browser and optimized for performance and usability.
 
-### 2.2 Product Functions
+### 2.2 Product Functions <a name="22-product-functions"></a>
 
 The major functions of the Social Networking Site include:
 
@@ -83,16 +83,16 @@ The major functions of the Social Networking Site include:
 - **Search Functionality**: Users can search for other users and content.
 - **Content Moderation**: Administrators can monitor and manage user-generated content.
 
-### 2.3 User Classes and Characteristics
+### 2.3 User Classes and Characteristics <a name="23-user-classes-and-characteristics"></a>
 
 - **General Users**: Individuals who use the platform for social networking. They require an intuitive interface and responsive performance.
 - **Administrators**: Users with elevated privileges responsible for managing the platform, moderating content, and handling user issues.
 
-### 2.4 Operating Environment
+### 2.4 Operating Environment <a name="24-operating-environment"></a>
 
 The Social Networking Site will operate in a web environment, accessible via major web browsers (e.g., Chrome, Firefox, Safari). The backend will be deployed on cloud infrastructure (GCP, Azure, or AWS), ensuring scalability and high availability.
 
-### 2.5 Design and Implementation Constraints
+### 2.5 Design and Implementation Constraints <a name="25-design-and-implementation-constraints"></a>
 
 - **Frontend**:
   - Developed using **HTML**, **Tailwind CSS**, **Angular**, and **NgRx** for state management.
@@ -116,7 +116,7 @@ The Social Networking Site will operate in a web environment, accessible via maj
 - **Testing Framework**:
   - **JUnit** will be the primary testing framework for backend validation.
 
-### 2.6 Assumptions and Dependencies
+### 2.6 Assumptions and Dependencies <a name="26-assumptions-and-dependencies"></a>
 
 - Users have access to stable internet and modern web browsers.
 - The system will integrate with third-party authentication providers.
@@ -124,9 +124,9 @@ The Social Networking Site will operate in a web environment, accessible via maj
 
 ---
 
-## 3. Specific Requirements
+## 3. Specific Requirements <a name="specific-requirements"></a>
 
-### 3.1 External Interface Requirements
+### 3.1 External Interface Requirements <a name="31-external-interface-requirements"></a>
 
 - **User Interfaces**: 
   - The UI must be responsive and intuitive, supporting various screen sizes (desktop, tablet, mobile).
@@ -136,7 +136,7 @@ The Social Networking Site will operate in a web environment, accessible via maj
   - The system will provide RESTful APIs for integration with mobile apps and external services.
   - API endpoints will be secured using OAuth tokens.
 
-### 3.2 Functional Requirements
+### 3.2 Functional Requirements <a name="32-functional-requirements"></a>
 
 #### 3.2.1 User Registration and Authentication
 - The system shall allow users to register with an email address and password.
@@ -165,62 +165,54 @@ The Social Networking Site will operate in a web environment, accessible via maj
 - The system shall allow administrators to view, edit, and delete user-generated content.
 - The system shall allow administrators to suspend or ban user accounts violating platform policies.
 
-### 3.3 Performance Requirements
+### 3.3 Performance Requirements <a name="33-performance-requirements"></a>
 
 - The system shall support at least 10,000 concurrent users without significant performance degradation.
 - The system shall load the main user interface within 3 seconds under normal conditions.
 - The API shall respond to requests within 200ms on average.
 
-### 3.4 Logical Database Requirements
+### 3.4 Logical Database Requirements <a name="34-logical-database-requirements"></a>
 
 - The system shall store user profiles, posts, friend connections, and messages in a relational database.
-- The system shall ensure data integrity, supporting ACID (Atomicity, Consistency, Isolation, Durability) transactions for critical operations like account creation and message delivery.
+- The system shall maintain audit logs of all user activities for a minimum of 1 year.
 
-### 3.5 Design Constraints
+### 3.5 Design Constraints <a name="35-design-constraints"></a>
 
-- The system shall be built using a microservices architecture to ensure scalability and modularity.
-- The system shall use industry-standard encryption (e.g., AES-256) for data in transit and at rest.
-- The system shall comply with relevant data protection regulations (e.g., GDPR).
+- The frontend will use **Angular** for the application framework and **NgRx** for state management.
+- The backend will use **Java** with **Spring Boot** for RESTful service development.
+- Cloud deployment will utilize **GCP**, **Azure**, or **AWS** with **Ansible** or **Terraform** for infrastructure as code.
+- CI/CD processes will be managed using **GitLab Pipelines** and **CircleCI**.
 
-### 3.6 Software System Attributes
+### 3.6 Software System Attributes <a name="36-software-system-attributes"></a>
 
 - **Security**: 
-  - The system must prevent unauthorized access and ensure data protection through encryption and secure authentication mechanisms.
-  - The system shall be compliant with industry-standard security practices (e.g., OWASP Top Ten).
-
-- **Usability**: 
-  - The system must be easy to navigate, with clear instructions and a responsive design that works across devices.
-
-- **Scalability**: 
-  - The system must be able to scale horizontally to accommodate increasing numbers of users and data volume.
-
-- **Maintainability**: 
-  - The system shall be modular, with well-documented code to facilitate updates and maintenance.
-
+  - The system shall use **bcrypt** for password hashing.
+  - OAuth will be implemented for secure third-party authentication.
+  
 - **Reliability**: 
-  - The system shall have an uptime of at least 99.9%, with failover mechanisms in place to handle outages.
+  - The system shall have 99.9% uptime, supported by cloud-based infrastructure.
+  
+- **Maintainability**: 
+  - The system codebase will be modular, leveraging microservices for easier updates and maintenance.
+  
+- **Scalability**: 
+  - The system architecture will support horizontal scaling to handle growing user loads.
 
-### 3.7 Security Requirements
+### 3.7 Security Requirements <a name="37-security-requirements"></a>
 
-- The system shall use **OAuth 2.0** for secure authentication and authorization.
-- The system shall encrypt all sensitive data using **AES-256**.
-- The system shall implement **HTTPS** for all client-server communication.
-- The system shall log all user activities and provide audit trails for security analysis.
-- The system shall support
-
- role-based access control (RBAC) to restrict access based on user roles.
+- The system shall implement role-based access control (RBAC) to restrict access based on user roles.
 
 ---
 
-## 4. Appendices
+## 4. Appendices <a name="appendices"></a>
 
-### 4.1 Glossary
+### 4.1 Glossary <a name="41-glossary"></a>
 
 - **Friend Request**: A request sent by one user to another to become friends on the platform.
 - **OAuth**: An open-standard authorization protocol that allows secure access to user data without exposing user credentials.
 - **Microservices**: A software architecture style that structures an application as a collection of loosely coupled services.
 
-### 4.2 Use Cases
+### 4.2 Use Cases <a name="42-use-cases"></a>
 
 **Use Case 1: User Registration**  
 - **Actors**: New User  
@@ -239,4 +231,3 @@ The Social Networking Site will operate in a web environment, accessible via maj
 - **Description**: A registered user sends a friend request to another user.  
 - **Preconditions**: The user must be logged in and not already friends with the recipient.  
 - **Postconditions**: The friend request is sent and is pending until accepted or declined.
-
