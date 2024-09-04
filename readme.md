@@ -2,7 +2,7 @@
 
 Version 1.0 approved  
 Prepared by Arunabha Mukhopadhyay
-[Organization]  
+[Manipal University Jaipur]  
 04/09/2024 
 
 ## Table of Contents
